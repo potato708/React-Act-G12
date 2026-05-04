@@ -1,113 +1,84 @@
-/* 1. THE GLOBAL RESET */
+/* 1. Global Reset - Covers the white edges */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* 2. THE FULL-SCREEN BACKGROUND */
-html, body {
-  background: radial-gradient(circle at top, #2c3e50, #000000);
-  min-height: 100vh;
-  width: 100%;
-  overflow-x: hidden;
+/* 2. Page Background */
+body {
+  background-color: #2c3e50; /* Dark blue-gray from your reference */
 }
 
-/* 3. THE CONTAINER */
 .container {
-  padding: 40px 20px;
-  color: #fff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
-}
-
-/* 4. ERROR STYLING */
-.error-popup {
-  background-color: rgba(255, 0, 0, 0.2);
-  border: 1px solid #ff4444;
-  color: #ffcccc;
-  padding: 15px;
-  border-radius: 8px;
+  padding: 40px 20px;
   text-align: center;
-  max-width: 500px;
-  margin: 0 auto 20px;
+  font-family: 'Arial Black', sans-serif;
 }
 
-/* 5. TITLES & SEARCH */
+/* 3. Header & Search Bar */
 .headerTitle {
-  text-align: center;
+  color: #ff9800; /* Orange glow */
   font-size: 3rem;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px rgba(255, 152, 0, 0.6);
   text-transform: uppercase;
-  letter-spacing: 4px;
-  color: #ff9800;
-  text-shadow: 0 0 10px rgba(255, 152, 0, 0.7);
 }
 
 .search-bar {
-  display: block;
   width: 100%;
-  max-width: 500px;
-  margin: 0 auto 40px;
-  padding: 15px 25px;
-  background: rgba(255, 255, 255, 0.1);
+  max-width: 450px;
+  padding: 12px 25px;
+  border-radius: 50px; /* Rounded search bar */
   border: 2px solid #ff9800;
-  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.1);
   color: white;
   outline: none;
+  margin-bottom: 50px;
 }
 
+/* 4. The Grid - Puts cards side-by-side */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
   max-width: 1300px;
   margin: 0 auto;
 }
 
-/* 6. CARD STYLING */
-.card {
-  border-radius: 15px;
+/* 5. Character Card Styling */
+.character-card {
+  position: relative; /* Allows name to sit ON TOP of image */
+  border-radius: 20px;
   overflow: hidden;
-  background: #1a1a1a;
-  border: 1px solid rgba(255, 152, 0, 0.3);
-  transition: transform 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+  border: 1px solid #444;
 }
 
-.card:hover {
-  transform: translateY(-10px);
-  border-color: #ff9800;
+.character-card:hover {
+  transform: scale(1.05); /* Slight zoom effect */
 }
 
-.card-inner {
-  position: relative;
+/* 6. Image Size Control - FIXES THE HUGE IMAGES */
+.character-card img {
   width: 100%;
-  height: 350px;
+  height: 380px; /* Constant height for all cards */
+  object-fit: cover; /* Crops center so it doesn't stretch */
+  display: block;
 }
 
-.character-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.name-bar {
+/* 7. Name Overlay (The Orange Text at the bottom) */
+.name-overlay {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-  padding: 20px 10px 10px;
-  text-align: center;
-}
-
-.character-name {
+  padding: 25px 10px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9)); /* Black fade */
   color: #ff9800;
   font-weight: bold;
+  font-size: 1.4rem;
   text-transform: uppercase;
-}
-
-.loading-text {
   text-align: center;
-  color: #ff9800;
-  font-size: 1.2rem;
 }

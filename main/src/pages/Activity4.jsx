@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import CharacterCard from "../pages/CharacterCard";
+import CharacterCard from "./CharacterCard";
 import "./Activity4.css";
 
 const Activity4 = () => {

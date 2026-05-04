@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Modern Laptop",
+    "price": "₱45,000",
+    "desc": "High-performance for dev work."
+  },
+  {
+    "id": 2,
+    "name": "Mechanical Keyboard",
+    "price": "₱3,500",
+    "desc": "Tactile switches with RGB."
+  },
+  {
+    "id": 3,
+    "name": "Wireless Mouse",
+    "price": "₱1,200",
+    "desc": "Ergonomic and silent clicks."
+  }
+]

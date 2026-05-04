@@ -1,20 +1,16 @@
 import React from "react";
-import "../pages/Activity4.css"; // Reference the shared CSS file
 
 const CharacterCard = ({ character }) => {
-  const { name, images } = character;
+  // Use the first image in the array, or a placeholder if empty
+  const imageUrl = character.images && character.images.length > 0 
+    ? character.images[0] 
+    : "https://via.placeholder.com/300x400?text=No+Image";
 
   return (
-    <div className="card">
-      <div className="card-inner">
-        <img 
-          src={images?.[0] || "https://via.placeholder.com/300"} 
-          alt={name} 
-          className="character-img" 
-        />
-        <div className="name-bar">
-          <p className="character-name">{name}</p>
-        </div>
+    <div className="character-card">
+      <img src={imageUrl} alt={character.name} />
+      <div className="name-overlay">
+        {character.name}
       </div>
     </div>
   );
