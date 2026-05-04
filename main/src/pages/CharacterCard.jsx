@@ -1,5 +1,5 @@
 import React from "react";
-import "./Activity3.css";
+import "../pages/Activity4.css"; // Reference the shared CSS file
 
 const CharacterCard = ({ character }) => {
   const { name, images } = character;

@@ -1,5 +1,4 @@
 /* 1. THE GLOBAL RESET */
-/* This kills the 8px default margin browsers add to the body */
 * {
   margin: 0;
   padding: 0;
@@ -7,12 +6,11 @@
 }
 
 /* 2. THE FULL-SCREEN BACKGROUND */
-/* Applying the background here ensures it covers the entire window */
 html, body {
   background: radial-gradient(circle at top, #2c3e50, #000000);
   min-height: 100vh;
   width: 100%;
-  overflow-x: hidden; /* Prevents accidental side-scrolling */
+  overflow-x: hidden;
 }
 
 /* 3. THE CONTAINER */
@@ -23,7 +21,19 @@ html, body {
   min-height: 100vh;
 }
 
-/* 4. THE REMAINING STYLES (Gallery & Cards) */
+/* 4. ERROR STYLING */
+.error-popup {
+  background-color: rgba(255, 0, 0, 0.2);
+  border: 1px solid #ff4444;
+  color: #ffcccc;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto 20px;
+}
+
+/* 5. TITLES & SEARCH */
 .headerTitle {
   text-align: center;
   font-size: 3rem;
@@ -55,6 +65,7 @@ html, body {
   margin: 0 auto;
 }
 
+/* 6. CARD STYLING */
 .card {
   border-radius: 15px;
   overflow: hidden;
@@ -93,4 +104,10 @@ html, body {
   color: #ff9800;
   font-weight: bold;
   text-transform: uppercase;
+}
+
+.loading-text {
+  text-align: center;
+  color: #ff9800;
+  font-size: 1.2rem;
 }

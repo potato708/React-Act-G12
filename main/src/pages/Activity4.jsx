@@ -1,0 +1,78 @@
+import React, { useEffect, useState } from "react";
+import CharacterCard from "../pages/CharacterCard";
+import "./Activity4.css";
+
+const Activity4 = () => {
+  const [characterList, setCharacterList] = useState([]);
+  const [search, setSearch] = useState("");
+  const [error, setError] = useState(null);
+
+  const fetchNarutoCharacters = async () => {
+    if (!navigator.onLine) {
+      setError("No internet connection. Please check your Wi-Fi.");
+      return;
+    }
+
+    try {
+      const response = await fetch("https://dattebayo-api.onrender.com/characters?limit=1500");
+      if (!response.ok) throw new Error("Network response was not ok");
+      
+      const result = await response.json();
+      setCharacterList(result.characters || []);
+      setError(null);
+    } catch (err) {
+      setError("Failed to fetch characters. The server might be down.");
+      console.error("Error:", err);
+    }
+  };
+
+  useEffect(() => {
+    fetchNarutoCharacters();
+    
+    const handleOffline = () => setError("You are now offline.");
+    const handleOnline = () => {
+      setError(null);
+      fetchNarutoCharacters();
+    };
+
+    window.addEventListener("offline", handleOffline);
+    window.addEventListener("online", handleOnline);
+
+    return () => {
+      window.removeEventListener("offline", handleOffline);
+      window.removeEventListener("online", handleOnline);
+    };
+  }, []);
+
+  const filtered = characterList.filter((char) =>
+    char.name.toLowerCase().includes(search.toLowerCase())
+  );
+
+  return (
+    <main className="container">
+      <h1 className="headerTitle">NARUTO CHARACTERS 🌀</h1>
+      
+      <input
+        type="text"
+        placeholder="Search ninja..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        className="search-bar"
+      />
+
+      {error && <div className="error-popup">{error}</div>}
+
+      <section className="gallery">
+        {filtered.length > 0 ? (
+          filtered.map((data) => (
+            <CharacterCard key={data.id} character={data} />
+          ))
+        ) : (
+          !error && <p className="loading-text">Summoning Shinobi...</p>
+        )}
+      </section>
+    </main>
+  );
+};
+
+export default Activity4;
