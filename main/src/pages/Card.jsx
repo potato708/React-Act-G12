@@ -5,7 +5,7 @@ const Card = ({ name, price, desc }) => {
     <div className="card">
       <div className="card-header">
         <h2>{name}</h2>
-        <span className="price-tag">{price}</span>
+        <span className="price-tag">₱{price}</span>
       </div>
       <p>{desc}</p>
       <button className="card-btn">View Details</button>

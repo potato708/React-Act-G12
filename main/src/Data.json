@@ -1,0 +1,13 @@
+{
+  "characters": [
+    { "id": 1, "name": "Naruto Uzumaki", "images": ["https://narutodb.xyz/images/characters/1344.jpg"], "personal": { "affiliation": ["Konohagakure"] } },
+    { "id": 2, "name": "Sasuke Uchiha", "images": ["https://narutodb.xyz/images/characters/1306.jpg"], "personal": { "affiliation": ["Konohagakure"] } },
+    { "id": 3, "name": "Sakura Haruno", "images": ["https://narutodb.xyz/images/characters/1311.jpg"], "personal": { "affiliation": ["Konohagakure"] } },
+    { "id": 4, "name": "Kakashi Hatake", "images": ["https://narutodb.xyz/images/characters/566.jpg"], "personal": { "affiliation": ["Konohagakure"] } },
+    { "id": 5, "name": "Itachi Uchiha", "images": ["https://narutodb.xyz/images/characters/605.jpg"], "personal": { "affiliation": ["Akatsuki"] } },
+    { "id": 6, "name": "Hinata Hyūga", "images": ["https://narutodb.xyz/images/characters/511.jpg"], "personal": { "affiliation": ["Konohagakure"] } },
+    { "id": 7, "name": "Gaara", "images": ["https://narutodb.xyz/images/characters/388.jpg"], "personal": { "affiliation": ["Sunagakure"] } },
+    { "id": 8, "name": "Shikamaru Nara", "images": ["https://narutodb.xyz/images/characters/1243.jpg"], "personal": { "affiliation": ["Konohagakure"] } },
+    { "id": 9, "name": "Jiraiya", "images": ["https://narutodb.xyz/images/characters/641.jpg"], "personal": { "affiliation": ["Konohagakure"] } }
+  ]
+}
