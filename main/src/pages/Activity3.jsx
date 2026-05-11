@@ -7,7 +7,6 @@ const Activity3 = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    // Setting the product data from your JSON file
     setItems(product);
   }, []);
 
