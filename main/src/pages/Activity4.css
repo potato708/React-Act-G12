@@ -1,12 +1,9 @@
-/* 1. GLOBAL RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* 2. THE BACKGROUND FIX */
-/* We use 'fixed' so the color stays consistent even when you scroll to the bottom */
 html, body {
   background: radial-gradient(circle at top, #1a2a3a 0%, #050505 100%) no-repeat fixed;
   background-size: cover;
@@ -17,14 +14,14 @@ html, body {
   overflow-x: hidden;
 }
 
-/* 3. MAIN CONTAINER */
+
 .container {
   padding: 50px 20px;
   max-width: 1400px;
   margin: 0 auto;
 }
 
-/* 4. SHINOBI TITLE STYLING */
+
 .headerTitle {
   text-align: center;
   font-size: clamp(2rem, 8vw, 4rem);
@@ -33,11 +30,10 @@ html, body {
   text-transform: uppercase;
   letter-spacing: 8px;
   margin-bottom: 40px;
-  /* Double glow effect */
   text-shadow: 0 0 15px rgba(255, 152, 0, 0.7), 0 0 30px rgba(255, 152, 0, 0.3);
 }
 
-/* 5. SEARCH BAR */
+
 .search-bar {
   display: block;
   width: 100%;
@@ -60,20 +56,19 @@ html, body {
   transform: translateY(-2px);
 }
 
-/* 6. THE GRID */
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 40px;
 }
 
-/* 7. AMAZING BORDER CARD */
+
 .card {
   position: relative;
   background: #111;
   border-radius: 20px;
   overflow: hidden;
-  /* Stylish subtle border */
   border: 1px solid rgba(255, 152, 0, 0.2);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
@@ -81,7 +76,7 @@ html, body {
 
 .card:hover {
   transform: translateY(-12px);
-  border-color: #ff9800; /* Glows on hover */
+  border-color: #ff9800;
   box-shadow: 0 15px 40px rgba(255, 152, 0, 0.25);
 }
 
@@ -102,13 +97,12 @@ html, body {
   transform: scale(1.1);
 }
 
-/* 8. OVERLAY & NAME */
+
 .name-bar {
   position: absolute;
   bottom: 0;
   width: 100%;
   padding: 40px 10px 20px;
-  /* Deep fade from black to transparent */
   background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 20%, rgba(0, 0, 0, 0.7) 50%, transparent 100%);
   text-align: center;
 }
@@ -122,7 +116,7 @@ html, body {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* 9. ERROR MESSAGES */
+
 .error-popup {
   background: rgba(255, 0, 0, 0.15);
   border: 2px solid #ff4444;

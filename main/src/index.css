@@ -1,13 +1,115 @@
-html,
-body{
-  height: fit-content;
-  width: 100%;
-  scroll-behavior: smooth;
+/* ======================================================== */
+/* MORPHO AI GLASSMORPHISM INTERFACE STYLING                */
+/* ======================================================== */
 
+html {
+  scroll-behavior: smooth;
 }
 
-*{
-  padding: 0;
+body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif, system-ui;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #020617 !important; /* Premium Slate Midnight */
+  color: #f8fafc;
+  overflow-x: hidden;
+}
+
+/* Fluid Layout Grid Overrides */
+.grid-3 {
+  display: grid !important;
+  grid-template-cols: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .grid-3 {
+    grid-template-cols: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+/* Glassmorphism Dynamic Cards */
+.morpho-card {
+  background: rgba(15, 23, 42, 0.45) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  padding: 2rem !important;
+  border-radius: 1.5rem !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  cursor: pointer;
+}
+
+.morpho-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  background: rgba(15, 23, 42, 0.6) !important;
+  box-shadow: 0 20px 40px -15px rgba(34, 211, 238, 0.15);
+}
+
+/* Hover Accent Borders per card */
+.border-teal:hover { border-color: rgba(45, 212, 191, 0.4) !important; }
+.border-purple:hover { border-color: rgba(168, 85, 247, 0.4) !important; }
+.border-cyan:hover { border-color: rgba(34, 211, 238, 0.4) !important; }
+.border-amber:hover { border-color: rgba(245, 158, 11, 0.4) !important; }
+
+/* Icon Wrapper Backgrounds */
+.icon-teal { background: rgba(45, 212, 191, 0.1); color: #2dd4bf; }
+.icon-purple { background: rgba(168, 85, 247, 0.1); color: #c084fc; }
+.icon-cyan { background: rgba(34, 211, 238, 0.1); color: #22d3ee; }
+.icon-amber { background: rgba(245, 158, 11, 0.1); color: #fbbf24; }
+
+.icon-box {
+  padding: 0.85rem;
+  border-radius: 1rem;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+/* Text & Title Glow Gradients */
+.glow-text {
+  background: linear-gradient(to right, #2dd4bf, #a78bfa, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+/* Premium Navigation Deck */
+.morpho-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(2, 6, 23, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Interactive Actions Link Button */
+.console-btn {
+  background: linear-gradient(90deg, #2dd4bf, #22d3ee) !important;
+  color: #020617 !important;
+  padding: 1rem 2.25rem;
+  border-radius: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 8px 30px rgba(34, 211, 238, 0.25);
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+
+.console-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(34, 211, 238, 0.4);
 }
