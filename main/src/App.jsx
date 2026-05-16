@@ -97,19 +97,24 @@ function App() {
           transition: background 0.6s ease, color 0.6s ease;
         }
 
-        /* Top-Left Banner Text */
+        /* Top-Left Banner Text - FIXED CLIPPING */
         .project-banner-text {
-          position: absolute;
-          top: 30px;
-          left: 30px;
+          position: fixed;
+          top: 25px;
+          left: 25px;
           font-family: 'Fredoka', sans-serif;
           font-weight: 700;
           font-size: 1.1rem;
           letter-spacing: 0.5px;
           color: ${isNightMode ? "#cbd5e1" : "#4a5568"};
           text-shadow: ${isNightMode ? "2px 2px 0px #000" : "2px 2px 0px #fff"};
-          z-index: 90;
+          z-index: 999;
           user-select: none;
+          background: ${isNightMode ? "rgba(9, 13, 22, 0.6)" : "rgba(255, 255, 255, 0.6)"};
+          padding: 6px 14px;
+          border-radius: 12px;
+          backdrop-filter: blur(4px);
+          border: 2px solid ${isNightMode ? "#2d3748" : "#ffffff"};
         }
 
         .theme-toggle-btn {
@@ -272,7 +277,7 @@ function App() {
             {isNightMode ? "☀️ Day Mode" : "🌙 Night Mode"}
           </button>
 
-          {/* 🌟 HARD CONDITIONAL TOGGLE: Rockets only mount when isNightMode is True */}
+          {/* Hard Conditional Toggle: Rockets only render when isNightMode is True */}
           {isNightMode && (
             <>
               <div className="rocket-ship rocket-1">🚀</div>
