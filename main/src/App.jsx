@@ -90,16 +90,16 @@ function App() {
           };
           color: ${isNightMode ? "#f8fafc" : "#2d3748"};
           min-height: 100vh;
-          padding: 3rem 2rem;
+          padding: 4rem 2rem 3rem 2rem;
           position: relative;
           overflow-x: hidden;
           box-sizing: border-box;
           transition: background 0.6s ease, color 0.6s ease;
         }
 
-        /* Top-Left Banner Text - FIXED CLIPPING */
+        /* Top-Left Banner Text - STAYS AT THE TOP, SCROLLS AWAY */
         .project-banner-text {
-          position: fixed;
+          position: absolute; /* Changed to absolute so it scrolls out of view */
           top: 25px;
           left: 25px;
           font-family: 'Fredoka', sans-serif;
@@ -108,7 +108,7 @@ function App() {
           letter-spacing: 0.5px;
           color: ${isNightMode ? "#cbd5e1" : "#4a5568"};
           text-shadow: ${isNightMode ? "2px 2px 0px #000" : "2px 2px 0px #fff"};
-          z-index: 999;
+          z-index: 10;
           user-select: none;
           background: ${isNightMode ? "rgba(9, 13, 22, 0.6)" : "rgba(255, 255, 255, 0.6)"};
           padding: 6px 14px;
@@ -117,8 +117,9 @@ function App() {
           border: 2px solid ${isNightMode ? "#2d3748" : "#ffffff"};
         }
 
+        /* Night Mode Button - STAYS AT THE TOP, SCROLLS AWAY */
         .theme-toggle-btn {
-          position: absolute;
+          position: absolute; /* Changed to absolute so it scrolls out of view */
           top: 25px;
           right: 25px;
           padding: 10px 20px;
@@ -132,7 +133,7 @@ function App() {
           color: white;
           box-shadow: 4px 4px 0px #2d3748;
           transition: all 0.2s ease;
-          z-index: 100;
+          z-index: 10;
         }
         .theme-toggle-btn:hover { transform: translateY(-2px); }
         .theme-toggle-btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px #2d3748; }
@@ -296,7 +297,7 @@ function App() {
           <div className="scenery-item sparkle-star" style={{ bottom: '45%', right: '7%', animationDelay: '1.9s' }}>✨</div>
 
           {/* Space Center Header Frame */}
-          <header style={{ textAlign: 'center', marginBottom: '4rem' }}>
+          <header style={{ textAlign: 'center', marginBottom: '4rem', marginTop: '1rem' }}>
             <div className="astronaut-container">
               <div className="astro-pack"></div>
               <div className="astro-boots"><div className="boot"></div><div className="boot"></div></div>
